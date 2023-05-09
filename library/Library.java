@@ -8,10 +8,24 @@ class Library {
     this.members.add(member);
   }
 
+  public void addBook(Book book) {
+    this.books.add(book);
+  }
+
   public Boolean isMemberIdExist(String id) {
     Boolean isExist = false;
     for (Member member : this.members) {
       if (member.id.equals(id)) {
+        isExist = true;
+      }
+    }
+    return isExist;
+  }
+
+  public Boolean isBookIdExist(String id) {
+    Boolean isExist = false;
+    for (Book book : this.books) {
+      if (book.id.equals(id)) {
         isExist = true;
       }
     }

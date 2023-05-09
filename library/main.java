@@ -1,3 +1,4 @@
+import java.util.Collection;
 import java.util.Scanner;
 
 class Main {
@@ -19,10 +20,12 @@ class Main {
       } else if (selectedMenu == 2) {
         showMembers();
       } else if (selectedMenu == 3) {
-        addMember();
+        addBook();
       } else if (selectedMenu == 4) {
-        borrowBook();
+        addMember();
       } else if (selectedMenu == 5) {
+        borrowBook();
+      } else if (selectedMenu == 6) {
         returnBook();
       } else {
         System.out.println("wrong input");
@@ -37,9 +40,10 @@ class Main {
     System.out.println("================================");
     System.out.println("1. show books list");
     System.out.println("2. show members list");
-    System.out.println("3. add member");
-    System.out.println("4. borrow book");
-    System.out.println("5. return book");
+    System.out.println("3. add book");
+    System.out.println("4. add member");
+    System.out.println("5. borrow book");
+    System.out.println("6. return book");
     System.out.println("================================");
   }
 
@@ -84,6 +88,7 @@ class Main {
   }
 
   public static void showBooks() {
+    
     for (Book book : library.books) {
       System.out.println(book.id + " " + book.title);
     }
@@ -108,6 +113,22 @@ class Main {
       System.out.println("Member ID Exist! Please use another Member ID");
     } else {
       library.addMember(member);
+    }
+  }
+
+  public static void addBook() {
+    Book book = new Book();
+
+    System.out.print("id : ");
+    book.id = scan.next();
+
+    System.out.print("name : ");
+    book.title = scan.next();
+
+    if (library.isMemberIdExist(book.id)) {
+      System.out.println("Book ID Exist! Please use another Book ID");
+    } else {
+      library.addBook(book);
     }
   }
 
