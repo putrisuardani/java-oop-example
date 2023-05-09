@@ -104,7 +104,11 @@ class Main {
     System.out.print("name : ");
     member.name = scan.next();
 
-    library.addMember(member);
+    if (library.isMemberIdExist(member.id)) {
+      System.out.println("Member ID Exist! Please use another Member ID");
+    } else {
+      library.addMember(member);
+    }
   }
 
   public static void borrowBook() {

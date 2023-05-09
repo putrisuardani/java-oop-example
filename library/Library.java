@@ -11,7 +11,7 @@ class Library {
   public Boolean isMemberIdExist(String id) {
     Boolean isExist = false;
     for (Member member : this.members) {
-      if (member.id == id) {
+      if (member.id.equals(id)) {
         isExist = true;
       }
     }
