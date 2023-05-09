@@ -118,7 +118,7 @@ class Main {
     System.out.print("id book : ");
     String bookId = scan.next();
 
-    library.giveBook(memberId, bookId);
+    library.giveBook(bookId, memberId);
   }
 
   public static void returnBook() {
@@ -128,6 +128,6 @@ class Main {
     System.out.print("id book : ");
     String bookId = scan.next();
 
-    library.receiveBook(memberId, bookId);
+    library.receiveBook(bookId, memberId);
   }
 }
