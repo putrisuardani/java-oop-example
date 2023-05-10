@@ -1,4 +1,3 @@
-import java.util.Collection;
 import java.util.Scanner;
 
 class Main {
@@ -49,16 +48,16 @@ class Main {
 
   public static void initLibraryData() {
     Book book1 = new Book();
-    book1.id = "1";
-    book1.title = "pemrograman java";
+    book1.setId("1");
+    book1.setTitle("pemrograman java");
 
     Book book2 = new Book();
-    book2.id = "2";
-    book2.title = "pemrograman oop";
+    book2.setId("2");
+    book2.setTitle("pemrograman oop");
 
     Book book3 = new Book();
-    book3.id = "3";
-    book3.title = "pemrograman android";
+    book3.setId("3");
+    book3.setTitle("pemrograman android");
 
     Member member1 = new Member();
     member1.id = "1";
@@ -90,7 +89,7 @@ class Main {
   public static void showBooks() {
     
     for (Book book : library.books) {
-      System.out.println(book.id + " " + book.title);
+      System.out.println(book.getId() + " " + book.getTitle());
     }
   }
 
@@ -120,12 +119,14 @@ class Main {
     Book book = new Book();
 
     System.out.print("id : ");
-    book.id = scan.next();
+    String bookId = scan.next();
+    book.setId(bookId);
 
     System.out.print("name : ");
-    book.title = scan.next();
+    String bookTitle = scan.next();
+    book.setTitle(bookTitle);
 
-    if (library.isMemberIdExist(book.id)) {
+    if (library.isMemberIdExist(bookId)) {
       System.out.println("Book ID Exist! Please use another Book ID");
     } else {
       library.addBook(book);

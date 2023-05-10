@@ -25,7 +25,7 @@ class Library {
   public Boolean isBookIdExist(String id) {
     Boolean isExist = false;
     for (Book book : this.books) {
-      if (book.id.equals(id)) {
+      if (book.getId().equals(id)) {
         isExist = true;
       }
     }
@@ -66,7 +66,7 @@ class Library {
 
   private Book getBookById(String id) {
     for (Book book : this.books) {
-      if (book.id.equals(id)) {
+      if (book.getId().equals(id)) {
         return book;
       }
     }
