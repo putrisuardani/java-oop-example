@@ -8,6 +8,10 @@ class Library {
 		this.members.add(member);
 	}
 	
+	public void deleteMember(String id) {
+		this.members.remove(this.getMemberById(id));
+	}
+	
 	public void addBook(Book book) {
 		this.books.add(book);
 	}

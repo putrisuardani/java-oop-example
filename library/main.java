@@ -26,6 +26,8 @@ class Main {
 				borrowBook();
 			} else if (selectedMenu == 6) {
 				returnBook();
+			} else if (selectedMenu == 7 ) {
+				deleteMember();
 			} else {
 				System.out.println("wrong input");
 			}
@@ -168,7 +170,9 @@ class Main {
 	}
   
 	public static void deleteMember() {
-		System.out.println("id member : ");
-	  
+		System.out.print("id : ");
+		String id = scan.next();
+
+		library.deleteMember(id);
 	}
 }
